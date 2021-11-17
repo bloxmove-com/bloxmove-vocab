@@ -132,36 +132,6 @@
         "issueDate": "schema:datePublished",
         "issuerName": "schema:legalName"
       }
-    },
-    "DrivingLicenseCredentialTest": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "validDrivingLicense": {
-          "@id": "schema:readonlyValue",
-          "@type": "@id"
-        },
-        "identifier": {
-          "@id": "schema:identifier",
-          "@type": "@id"
-        },
-        "validUntil": {
-          "@id": "schema:validUntil",
-          "@type": "@id"
-        },
-        "issueDate": {
-          "@id": "schema:datePublished",
-          "@type": "@id"
-        },
-        "issuerName": {
-          "@id": "schema:legalName",
-          "@type": "@id"
-        }
-      }
     }
   }
 }
