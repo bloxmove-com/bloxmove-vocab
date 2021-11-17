@@ -55,8 +55,7 @@ Example credential:
             "https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft"
         ],
         "type": [
-            "VerifiableCredential",
-            "IdentityCredential"
+            "VerifiableCredential"
         ],
         "issuer": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
@@ -65,6 +64,7 @@ Example credential:
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",
+            "type": "IdentityCredential",
             "minAge18": true,
             "minAge21": true,
             "minAge25": true,
@@ -113,8 +113,7 @@ Example credential:
             "https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft"
         ],
         "type": [
-            "VerifiableCredential",
-            "DrivingLicenseCredential"
+            "VerifiableCredential"
             ],
         "issuer": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
@@ -123,7 +122,7 @@ Example credential:
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",
-
+            "type": "DrivingLicenseCredential",
             "validDrivingLicense": true,
             "identifier": "HUJNZT52Y",
             "validUntil": "1636992690647",
@@ -139,9 +138,19 @@ Example credential:
 }
 ```
 
-## TopicCredential
+## Other Credentials
 
-The TopicCredential is used by a user-participant or agent-participant of the bloXmove
+- ConsumerConfirmCredential
+- OfferConfirmCredential
+- ProviderConfirmCredential
+- ConsumerEndRequestCredential
+- ConsumerAccessTokenRequestCredential
+- ProviderEndConfirmCredential
+- ConsumerEndConfirmCredential
+- VehicleAccessCredential
+- CompanyCredential
+
+These are used by a user-participant or agent-participant of the bloXmove
 platform when requesting an action from a service that requires a verifiable credential
 proving the request on this topic is authentic.
 
@@ -162,8 +171,7 @@ Example credential:
             "https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft"
         ],
         "type": [
-            "VerifiableCredential",
-            "TopicCredential"
+            "VerifiableCredential"
         ],
         "issuer": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
@@ -172,7 +180,7 @@ Example credential:
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",
-
+            "type": "ConsumerConfirmCredential"
             "vehicleDID": "did:eth:0x3089247237312984731289473298",
             "contractDID": "did:eth:0x3089247237312984731289473298",
             "topic": "/confirmBooking",
