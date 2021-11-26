@@ -2,8 +2,6 @@
   "@context": {
     "@version": 1.1,
     "@protected": true,
-    "id": "@id",
-    "type": "@type",
     "ConsumerConfirmCredential": {
       "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
       "@context": {
@@ -12,7 +10,7 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "credentialSubject": {"@id": "cred:credentialSubject", "@type": "@id", "topic": "schema:description"}
+        "topic": "schema:description"
       }
     },
     "OfferConfirmCredential": {

@@ -82,9 +82,12 @@ Example credential:
             "issuerName": "Stadt Bonn"
         }
     },
-    "options": {
+    "proof": {
         "type": "Ed25519Signature2018",
-        "issuer": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
+        "created": "2021-11-26T10:52:57Z",
+        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..uQPlREOa6Tu1fle4SF8gziYW3DF4XVIjXykNel4nFwt9_tDXv55lUykJ0z6R3Rh68OvcjByMNb6HJdDKkgwgDw",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2#z6MkpUF1EwrjZr6Wo87QqoY9B83BUKWtNceRdziPvAjAxpXy"
     }
 }
 ```
@@ -130,10 +133,13 @@ Example credential:
             "issuerName": "Stadt Bonn",
         }
     },
-    "options": {
+    "proof": {
         "type": "Ed25519Signature2018",
-        "issuer": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
-    }
+        "created": "2021-11-26T10:52:57Z",
+        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..uQPlREOa6Tu1fle4SF8gziYW3DF4XVIjXykNel4nFwt9_tDXv55lUykJ0z6R3Rh68OvcjByMNb6HJdDKkgwgDw",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2#z6MkpUF1EwrjZr6Wo87QqoY9B83BUKWtNceRdziPvAjAxpXy"
+    }}
 }
 ```
 
