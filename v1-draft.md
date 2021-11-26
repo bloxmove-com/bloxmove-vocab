@@ -148,7 +148,7 @@ Example credential:
 - ProviderEndConfirmCredential
 - ConsumerEndConfirmCredential
 - VehicleAccessCredential
-- CompanyCredential
+- CompanyCredential -> need to clarify
 
 These are used by a user-participant or agent-participant of the bloXmove
 platform when requesting an action from a service that requires a verifiable credential

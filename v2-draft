@@ -1,0 +1,27 @@
+{
+  "@context": [{
+    "@version": 1.1
+  }, {
+    "schema": "http://schema.org/",
+    "minAge18": "schema:boolean",
+    "minAge21": "schema:boolean",
+    "minAge25": "schema:boolean",
+    "company": "schema:boolean",
+    "familyName": "schema:familyName",
+    "givenName": "schema:givenName",
+    "birthCountry": "schema:birthPlace",
+    "birthDate": "schema:birthDate",
+    "age": "schema:number",
+    "streetAddress": "schema:streetAddress",
+    "postalCode": "schema:postalCode",
+    "country": "schema:addressCountry",
+    "validDrivingLicense": "schema:boolean",
+    "identifier": "schema:identifier",
+    "validUntil": "schema:validUntil",
+    "issueDate": "schema:datePublished",
+    "issuerName": "schema:legalName",
+    "vehicleDID": "schema:identifier",
+    "contractDID": "schema:identifier",
+    "topic": "schema:description"
+  }]
+}
