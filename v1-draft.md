@@ -134,7 +134,6 @@ Example credential:
         "type": "Ed25519Signature2018",
         "issuer": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
     }
-
 }
 ```
 
@@ -148,7 +147,7 @@ Example credential:
 - ProviderEndConfirmCredential
 - ConsumerEndConfirmCredential
 - VehicleAccessCredential
-- CompanyCredential -> need to clarify
+- CompanyCredential
 
 These are used by a user-participant or agent-participant of the bloXmove
 platform when requesting an action from a service that requires a verifiable credential
@@ -160,6 +159,7 @@ proving the request on this topic is authentic.
 | vehicleDID              | DID of the vehicle subject of the request (optional)  |
 | contractDID             | DID of the contract subject of the request (optional) |
 | topic                   | string describing the request                         |
+| company                 | boolean to set company identity                       |
 
 Example credential:
 
@@ -174,22 +174,22 @@ Example credential:
             "VerifiableCredential"
         ],
         "issuer": {
-            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
+            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"   <--- Customer DID
         },
         "issuanceDate": "2020-03-10T04:24:12.164Z",
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
-            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",
+            "id": "did:ethr:blxm-local:0x0FE5e42dD883D33a0a84de9F6C483Ea228E07B91",  <--- Contract DID
             "type": "ConsumerConfirmCredential"
-            "vehicleDID": "did:eth:0x3089247237312984731289473298",
-            "contractDID": "did:eth:0x3089247237312984731289473298",
             "topic": "/confirmBooking",
-
         }
     },
-    "options": {
+    "proof": {
         "type": "Ed25519Signature2018",
-        "issuer": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
+        "created": "2021-11-26T10:52:57Z",
+        "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..uQPlREOa6Tu1fle4SF8gziYW3DF4XVIjXykNel4nFwt9_tDXv55lUykJ0z6R3Rh68OvcjByMNb6HJdDKkgwgDw",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2#z6MkpUF1EwrjZr6Wo87QqoY9B83BUKWtNceRdziPvAjAxpXy"
     }
 }
 ```

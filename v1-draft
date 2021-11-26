@@ -10,8 +10,6 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
       }
     },
@@ -23,8 +21,6 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
       }
     },
@@ -36,8 +32,6 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
       }
     },
@@ -49,8 +43,6 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
       }
     },
@@ -62,8 +54,6 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
       }
     },
@@ -75,8 +65,6 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
       }
     },
@@ -88,9 +76,30 @@
         "id": "@id",
         "type": "@type",
         "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "contractDID": "schema:identifier",
         "topic": "schema:description"
+      }
+    },
+    "VehicleAccessCredential": {
+      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
+      "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "schema": "http://schema.org/",
+        "vehicleDID": "schema:identifier",
+        "rentalContractDID": "schema:identifier"
+      }
+    },
+    "CompanyCredential": {
+      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
+      "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "schema": "http://schema.org/",
+        "company": "schema:boolean"
       }
     },
     "IdentityCredential": {
