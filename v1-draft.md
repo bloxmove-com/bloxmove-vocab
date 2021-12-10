@@ -21,17 +21,32 @@ betweeen participants. This document describes the types of credentials and thei
 
 The machine-readable form of this description is using [JSON-LD](https://json-ld.org/) format and can be found [here](https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft).
 
-## IdentityCredential
+## Credential Types
 
-The IdentityCredential is used by a user-participant of the bloXmove platform when
-interacting with a service that requires a verifiable identity for operation.
+| Credential Types             | Description                                      |
+| ---------------------------- | ------------------------------------------------ |
+| MinAge18Type                 | VC that confirms user is over 18                 |
+| MinAge21Type                 | VC that confirms user is over 21                 |
+| MinAge25Type                 | VC that confirms user is over 25                 |
+| DriverLicenseType            | VC that confirms user has a valid driver license |
+| ConsumerConfirmCredential    | VC issued by user to confirm a booking           |
+| OfferConfirmCredential       | VC issued by fleet-node to confirm rental        |
+| ProviderConfirmCredential    | VC issued by fleet-node to start rental          |
+| ConsumerEndRequestCredential | VC issued by user to request the end of booking  |
+| ProviderEndConfirmCredential | VC issued by fleet-node to end rental            |
+| ConsumerEndConfirmCredential | VC issued by user to confirm the end of booking  |
+| VehicleAccessCredential      | VC issued by fleet-node to access the vehicle    |
+| CompanyCredential            | VC to confirm that the subject is a company      |
+
+## CredentialSubject Fields
 
 | CredentialSubject Field | Description                                                    |
 | ----------------------- | -------------------------------------------------------------- |
-| id                      | ID (DID) of the participant                                    |
+| id                      | ID (DID) of the subject                                        |
 | minAge18                | true if the participant is at least 18 years of age (optional) |
 | minAge21                | true if the participant is at least 21 years of age (optional) |
 | minAge25                | true if the participant is at least 25 years of age (optional) |
+| driverLicense           | true if the participant has a valid driver license (optional)  |
 | identifier              | ID of the document source for the credential (optional)        |
 | familyName              | family name of the participant (optional)                      |
 | givenName               | given name of the participant (optional)                       |
@@ -44,8 +59,17 @@ interacting with a service that requires a verifiable identity for operation.
 | validUntil              | date until the credential is valid (optional)                  |
 | issueDate               | date when the credential was issued (optional)                 |
 | issuerName              | name of the entity issuing the credential (optional)           |
+| company                 | true if the participant is a company (optional)                |
+| vehicleDID              | did of the vehicle (optional)                                  |
+| contractDID             | did of the contract (optional)                                 |
+| topic                   | description of the topic, e.g. "/consumerConfirm" (optional)   |
 
-Example credential:
+## Example credential:
+
+### MinAge18Type Credential
+
+The MinAge18Type Credential is used by a user-participant of the bloXmove platform when
+reserving or booking a vehicle that requires an age above 18 for operation.
 
 ```
 {
@@ -55,31 +79,16 @@ Example credential:
             "https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft"
         ],
         "type": [
-            "VerifiableCredential"
+            "VerifiableCredential, MinAge18Type"
         ],
         "issuer": {
-            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
+            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"    <--- KYC DID
         },
         "issuanceDate": "2020-03-10T04:24:12.164Z",
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
-            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",
-            "type": "IdentityCredential",
-            "minAge18": true,
-            "minAge21": true,
-            "minAge25": true,
-            "identifier": "U7SB2WKX",
-            "familyName": "Maxime",
-            "givenName": "Mustermann",
-            "birthCountry": "Austria",
-            "birthDate": "1636992690647",
-            "age": 29,
-            "streetAddress": "Bergweg 2",
-            "postalCode": "80889",
-            "country": "Germany",
-            "validUntil": "1636992690647",
-            "issueDate": "1636992690647",
-            "issuerName": "Stadt Bonn"
+            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",   <--- Customer DID
+            "minAge18": true
         }
     },
     "proof": {
@@ -92,21 +101,11 @@ Example credential:
 }
 ```
 
-## DrivingLicenseCredential
+### DriverLicenseType Credential
 
-The DrivingLicenseCredential is used by a user-participant of the bloXmove platform when
+The DriverLicenseType Credent is used by a user-participant of the bloXmove platform when
 reserving or booking a vehicle that requires a driving license for operation.
 
-| CredentialSubject Field | Description                                                    |
-| ----------------------- | -------------------------------------------------------------- |
-| id                      | ID (DID) of the participant                                    |
-| validDrivingLicense     | true if a valid driving license for the participant was issued |
-| identifier              | ID of the document source for the credential (optional)        |
-| validUntil              | date until the credential is valid (optional)                  |
-| issueDate               | date when the credential was issued (optional)                 |
-| issuerName              | name of the entity issuing the credential (optional)           |
-
-Example credential:
 
 ```
 {
@@ -116,21 +115,16 @@ Example credential:
             "https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft"
         ],
         "type": [
-            "VerifiableCredential"
-            ],
+            "VerifiableCredential, DriverLicenseType"
+        ],
         "issuer": {
-            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"
+            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"   <--- KYC DID
         },
         "issuanceDate": "2020-03-10T04:24:12.164Z",
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
-            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",
-            "type": "DrivingLicenseCredential",
-            "validDrivingLicense": true,
-            "identifier": "HUJNZT52Y",
-            "validUntil": "1636992690647",
-            "issueDate": "1636992690647",
-            "issuerName": "Stadt Bonn",
+            "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:3ac0fcd36f0a42878d2c108314ddd45c",  <--- Customer DID
+            "driverLicense": true
         }
     },
     "proof": {
@@ -139,35 +133,13 @@ Example credential:
         "jws": "eyJhbGciOiJFZERTQSIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..uQPlREOa6Tu1fle4SF8gziYW3DF4XVIjXykNel4nFwt9_tDXv55lUykJ0z6R3Rh68OvcjByMNb6HJdDKkgwgDw",
         "proofPurpose": "assertionMethod",
         "verificationMethod": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2#z6MkpUF1EwrjZr6Wo87QqoY9B83BUKWtNceRdziPvAjAxpXy"
-    }}
+    }
 }
 ```
 
-## Other Credentials
+### ConsumerConfirmCredential
 
-- ConsumerConfirmCredential
-- OfferConfirmCredential
-- ProviderConfirmCredential
-- ConsumerEndRequestCredential
-- ConsumerAccessTokenRequestCredential
-- ProviderEndConfirmCredential
-- ConsumerEndConfirmCredential
-- VehicleAccessCredential
-- CompanyCredential
-
-These are used by a user-participant or agent-participant of the bloXmove
-platform when requesting an action from a service that requires a verifiable credential
-proving the request on this topic is authentic.
-
-| CredentialSubject Field | Description                                           |
-| ----------------------- | ----------------------------------------------------- |
-| id                      | ID (DID) of the participant                           |
-| vehicleDID              | DID of the vehicle subject of the request (optional)  |
-| contractDID             | DID of the contract subject of the request (optional) |
-| topic                   | string describing the request                         |
-| company                 | boolean to set company identity                       |
-
-Example credential:
+The ConsumerConfirmCredential is used by a user-participant of the bloXmove platform for confirming a booking.
 
 ```
 {
@@ -177,7 +149,7 @@ Example credential:
             "https://raw.githubusercontent.com/bloxmove-com/bloxmove-vocab/master/v1-draft"
         ],
         "type": [
-            "VerifiableCredential"
+            "VerifiableCredential, ConsumerConfirmCredential"
         ],
         "issuer": {
             "id": "did:web:doorman-pre-prod.wallet.eu.spherity.io:uuid:4f7d2251f7c34e829971a1ad8c41c6d2"   <--- Customer DID
@@ -186,7 +158,6 @@ Example credential:
         "expirationDate": "2022-03-10T04:24:12.164Z",
         "credentialSubject": {
             "id": "did:ethr:blxm-local:0x0FE5e42dD883D33a0a84de9F6C483Ea228E07B91",  <--- Contract DID
-            "type": "ConsumerConfirmCredential"
             "topic": "/confirmBooking",
         }
     },

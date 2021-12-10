@@ -1,146 +1,28 @@
 {
-  "@context": {
-    "@version": 1.1,
-    "@protected": true,
-    "ConsumerConfirmCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "OfferConfirmCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "ProviderConfirmCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "ConsumerEndRequestCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "ConsumerAccessTokenRequestCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "ProviderEndConfirmCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "ConsumerEndConfirmCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "topic": "schema:description"
-      }
-    },
-    "VehicleAccessCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "vehicleDID": "schema:identifier",
-        "rentalContractDID": "schema:identifier"
-      }
-    },
-    "CompanyCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "company": "schema:boolean"
-      }
-    },
-    "IdentityCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "minAge18": "schema:boolean",
-        "minAge21": "schema:boolean",
-        "minAge25": "schema:boolean",
-        "identifier": "schema:identifier",
-        "familyName": "schema:familyName",
-        "givenName": "schema:givenName",
-        "birthCountry": "schema:birthPlace",
-        "birthDate": "schema:birthDate",
-        "age": "schema:number",
-        "streetAddress": "schema:streetAddress",
-        "postalCode": "schema:postalCode",
-        "country": "schema:addressCountry",
-        "validUntil": "schema:validUntil",
-        "issueDate": "schema:datePublished",
-        "issuerName": "schema:issuedBy"
-      }
-    },
-    "DrivingLicenseCredential": {
-      "@id": "https://github.com/bloxmove-com/bloxmove-vocab/blob/master/v1-draft.md#vocabulary-for-verifiable-credentials-in-the-bloxmove-platform",
-      "@context": {
-        "@version": 1.1,
-        "@protected": true,
-        "id": "@id",
-        "type": "@type",
-        "schema": "http://schema.org/",
-        "validDrivingLicense": "schema:boolean",
-        "identifier": "schema:identifier",
-        "validUntil": "schema:validUntil",
-        "issueDate": "schema:datePublished",
-        "issuerName": "schema:legalName"
-      }
-    }
-  }
+  "@context": [{
+    "@version": 1.1
+  },
+  {
+    "schema": "http://schema.org/",
+    "minAge18": "schema:boolean",
+    "minAge21": "schema:boolean",
+    "minAge25": "schema:boolean",
+    "driverLicense": "schema:boolean",
+    "company": "schema:boolean",
+    "familyName": "schema:familyName",
+    "givenName": "schema:givenName",
+    "birthCountry": "schema:birthPlace",
+    "birthDate": "schema:birthDate",
+    "age": "schema:number",
+    "streetAddress": "schema:streetAddress",
+    "postalCode": "schema:postalCode",
+    "country": "schema:addressCountry",
+    "identifier": "schema:identifier",
+    "validUntil": "schema:validUntil",
+    "issueDate": "schema:datePublished",
+    "issuerName": "schema:legalName",
+    "vehicleDID": "schema:identifier",
+    "contractDID": "schema:identifier",
+    "topic": "schema:description"
+  }]
 }
