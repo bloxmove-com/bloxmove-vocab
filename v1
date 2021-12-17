@@ -22,7 +22,7 @@
     "issueDate": "schema:datePublished",
     "issuerName": "schema:legalName",
     "vehicleDID": "schema:identifier",
-    "contractDID": "schema:identifier",
+    "rentalContractDID": "schema:identifier",
     "topic": "schema:description"
   }]
 }
